@@ -1,41 +1,393 @@
-import React, { useEffect } from "react";
-import KhoaHoc from "./../../components/KhoaHoc";
-import * as action from "./../../redux/action/index";
-import { connect } from "react-redux";
+import React from 'react';
+import { NavLink } from "react-router-dom";
 
-function About(props) {
-  useEffect(() => {
-    props.getListCourse();
-  });
-
-  const renderHTML = () => {
-    return props.listCourse.map((item, index) => {
-      return <KhoaHoc key={index} khoaHoc={item} />;
-    });
-  };
-
+export default function About() {
   return (
-    <div className="container">
-      <div className="row">{renderHTML()}</div>
+    <div>
+      <div>
+  <section className="w3l-banner-slider-main w3l-inner-page-main">
+    <div className="breadcrumb-infhny">
+      <header className="top-headerhny">
+        {/*/nav*/}
+        <nav className="navbar navbar-expand-lg navbar-light fill">
+          <div className="container-fluid">
+            <NavLink className="navbar-brand" to="index.html">
+              <label className="lohny"><span className="fa fa-graduation-cap" aria-hidden="true" />Edu</label>Line</NavLink>
+            {/* if logo is image enable this   
+						<NavLink class="navbar-brand" to="#index.html">
+							<img src="image-path" alt=""="Your logo" title="Your logo" style="height:35px;" />
+						</NavLink> */}
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon" />
+            </button>
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul className="navbar-nav mx-lg-auto ml-auto">
+                <li className="nav-item active">
+                  <NavLink className="nav-link" to="index.html">Home</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="about.html">About</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="services.html">Courses</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="contact.html">Contact</NavLink>
+                </li>
+              </ul>
+            </div>
+            <form action="#" method="post" className="d-flex searchhny-form">
+              <input type="search" placeholder="Search Here..." required="required" />
+              <button type="submit"><span className="fa fa-search" aria-hidden="true" /></button>
+            </form>
+          </div>
+        </nav>
+        {/*//nav*/}
+      </header>
+      {/* /breadcrumbs*/}
+      <div className="container">
+        <nav aria-label="breadcrumb" className="breadcrumb-info">
+          <h2 className="hny-title text-center">About Us</h2>
+          <ol className="breadcrumb mb-0">
+            <li className="breadcrumb-item"><NavLink to="index.html">Home</NavLink></li>
+            <li className="breadcrumb-item active" aria-current="page">About Us</li>
+          </ol>
+        </nav>
+      </div>
+      {/* //breadcrumbs*/}
     </div>
-  );
+    {/*//banner-slider*/}
+  </section>
+  <section className="w3l-wecome-content-6">
+    {/* /content-6-section */}
+    <div className="ab-content-6-mian py-5">
+      <div className="container py-lg-5">
+        <div className="welcome-grids row">
+          <div className="col-lg-6 mb-lg-0 mb-5">
+            <h6>About Us</h6>
+            <h3 className="hny-title">
+              Improving Lives Through Learning
+            </h3>
+            <p className="my-4">Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum fringilla,
+              gravida felis vitae. Phasellus lacinia id, sunt in culpa quis. Phasellus lacinia</p>
+            <p className="mb-4">Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum fringilla.</p>
+            <div className="button-4-pink">
+              <div className="eff-4-pink" />
+              <NavLink to="services.html"> Read More</NavLink>
+            </div>
+          </div>
+          <div className="col-lg-6 welcome-image">
+            <img src="../../images/ab.jpg" className="img-fluid" alt="" />
+          </div>	
+        </div>	
+      </div>
+    </div>
+  </section>
+  {/* //content-6-section */}
+  <section className="w3l-specification-6">
+    {/* /specification-6*/}
+    <div className="specification-content py-5">
+      <div className="container py-lg-5">
+        <div className="mission-grids-info row">
+          <div className="mission-gd-left col-lg-7">
+            <div className="grids-inn-ab">
+              <div className="sub-mission one-top">
+                <div className="mission-sec-gd">
+                  <img src="../../images/p1.jpg" alt="" className="img-fluid" />
+                </div>
+                <div className="mission-sec-gd">
+                  <img src="../../images/p2.jpg" alt="" className="img-fluid" />
+                </div>
+              </div>
+              <div className="sub-mission">
+                <div className="mission-sec-gd">
+                  <img src="../../images/p6.jpg" alt="" className="img-fluid" />
+                </div>
+                <div className="mission-sec-gd">
+                  <img src="../../images/p4.jpg" alt="" className="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="mission-gd-right col-lg-5 pl-lg-4">
+            <h3 className="hny-title">Our Mission</h3>
+            <p>Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio consectetur.Ea consequuntur illum facere aperiam sequi optio consectetur adipisicing elitFuga, suscipit totam animi consequatur saepe blanditiis.Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio consectetur adipisicing elit..</p>
+          </div>
+        </div>
+      </div>
+    </div></section>
+  {/* //specification-6*/}
+  <section className="w3l-content-5">
+    {/* /content-6-section */}
+    <div className="content-5-main">
+      <div className="container">
+        <div className="content-info-in row">
+          <div className="content-gd col-lg-6">
+            <h3 className="hny-title two">
+              We work hard to prepare every student for their professional life</h3>
+          </div>
+          <div className="content-gd col-lg-6">
+            <p>Ea consequuntur illum facere aperiam sequi optio consectetur adipisicing elitFuga, suscipit totam animi consequatur saepe blanditiis.Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio consectetur adipisicing elit. Fuga, suscipit totam animi consequatur saepe blanditiis.</p>
+            <p>Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio consectetur adipisicing elit. Fuga, suscipit totam animi consequatur saepe blanditiis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {/* //content-6-section */}
+  {/*/team-sec*/}
+  <section className="w3l-team-main">
+    <div className="team py-5">
+      <div className="container py-lg-5">
+        <div className="row title-content">
+          <div className="col-lg-4 title-left">
+            <h3 className="hny-title">Expert Instructors</h3>
+          </div>
+          <div className="col-lg-8 title-info">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eligendi minima
+              accusantium
+              reiciendis, cupiditate optio corrupti quis quam at!.Duis aute irure dolor in reprehenderit
+              in voluptate velit esse cillum.</p>
+          </div>
+        </div>
+        <div className="row team-row">
+          <div className="col-lg-3 col-md-6 team-wrap">
+            <div className="team-info text-center">
+              <div className="column position-relative">
+                <NavLink to="#url"><img src="../../images/team1.jpg" alt="" className="img-fluid team-image" /></NavLink>
+              </div>
+              <div className="column">
+                <h3 className="name-pos"><NavLink to="#url">Mickel Zaman</NavLink></h3>
+                <p>Law Instructor</p>
+                <div className="social">
+                  <NavLink to="#facebook" className="facebook"><span className="fa fa-facebook" aria-hidden="true" /></NavLink>
+                  <NavLink to="#twitter" className="twitter"><span className="fa fa-twitter" aria-hidden="true" /></NavLink>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* end team member */}
+          <div className="col-lg-3 col-md-6 team-wrap">
+            <div className="team-info text-center">
+              <div className="column position-relative">
+                <NavLink to="#url"><img src="../../images/team2.jpg" alt="" className="img-fluid team-image" /></NavLink>
+              </div>
+              <div className="column">
+                <h3 className="name-pos"><NavLink to="#url">Paul Croves</NavLink></h3>
+                <p>English Instructor</p>
+                <div className="social">
+                  <NavLink to="#facebook" className="facebook"><span className="fa fa-facebook" aria-hidden="true" /></NavLink>
+                  <NavLink to="#twitter" className="twitter"><span className="fa fa-twitter" aria-hidden="true" /></NavLink>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* end team member */}
+          <div className="col-lg-3 col-md-6 team-wrap">
+            <div className="team-info text-center">
+              <div className="column position-relative">
+                <NavLink to="#url"><img src="../../images/team3.jpg" alt="" className="img-fluid team-image" /></NavLink>
+              </div>
+              <div className="column">
+                <h3 className="name-pos"><NavLink to="#url">Ricardo Spencer</NavLink></h3>
+                <p>Gym Instructor</p>
+                <div className="social">
+                  <NavLink to="#facebook" className="facebook"><span className="fa fa-facebook" aria-hidden="true" /></NavLink>
+                  <NavLink to="#twitter" className="twitter"><span className="fa fa-twitter" aria-hidden="true" /></NavLink>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* end team member */}
+          {/* end team member */}
+          <div className="col-lg-3 col-md-6 team-wrap">
+            <div className="team-info text-center">
+              <div className="column position-relative">
+                <NavLink to="#url"><img src="../../images/team4.jpg" alt="" className="img-fluid team-image" /></NavLink>
+              </div>
+              <div className="column">
+                <h3 className="name-pos"><NavLink to="#url">Marko Dugonji</NavLink></h3>
+                <p>Law Instructor</p>
+                <div className="social">
+                  <NavLink to="#facebook" className="facebook"><span className="fa fa-facebook" aria-hidden="true" /></NavLink>
+                  <NavLink to="#twitter" className="twitter"><span className="fa fa-twitter" aria-hidden="true" /></NavLink>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* end team member */}
+          <div className="col-lg-3 col-md-6 team-wrap">
+            <div className="team-info text-center">
+              <div className="column position-relative">
+                <NavLink to="#url"><img src="../../images/team5.jpg" alt="" className="img-fluid team-image" /></NavLink>
+              </div>
+              <div className="column">
+                <h3 className="name-pos"><NavLink to="#url">Anthony</NavLink></h3>
+                <p>Physics Instructor</p>
+                <div className="social">
+                  <NavLink to="#facebook" className="facebook"><span className="fa fa-facebook" aria-hidden="true" /></NavLink>
+                  <NavLink to="#twitter" className="twitter"><span className="fa fa-twitter" aria-hidden="true" /></NavLink>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* end team member */}
+          <div className="col-lg-3 col-md-6 team-wrap">
+            <div className="team-info text-center">
+              <div className="column position-relative">
+                <NavLink to="#url"><img src="../../images/team6.jpg" alt="" className="img-fluid team-image" /></NavLink>
+              </div>
+              <div className="column">
+                <h3 className="name-pos"><NavLink to="#url">Emma Stone</NavLink></h3>
+                <p>Maths Instructor</p>
+                <div className="social">
+                  <NavLink to="#facebook" className="facebook"><span className="fa fa-facebook" aria-hidden="true" /></NavLink>
+                  <NavLink to="#twitter" className="twitter"><span className="fa fa-twitter" aria-hidden="true" /></NavLink>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* end team member */}
+          <div className="col-lg-3 col-md-6 team-wrap">
+            <div className="team-info text-center">
+              <div className="column position-relative">
+                <NavLink to="#url"><img src="../../images/team7.jpg" alt="" className="img-fluid team-image" /></NavLink>
+              </div>
+              <div className="column">
+                <h3 className="name-pos"><NavLink to="#url">Rhoda Byrd</NavLink></h3>
+                <p>Finance Instructor</p>
+                <div className="social">
+                  <NavLink to="#facebook" className="facebook"><span className="fa fa-facebook" aria-hidden="true" /></NavLink>
+                  <NavLink to="#twitter" className="twitter"><span className="fa fa-twitter" aria-hidden="true" /></NavLink>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* end team member */}
+          {/* end team member */}
+          <div className="col-lg-3 col-md-6 team-wrap">
+            <div className="team-info text-center">
+              <div className="column position-relative">
+                <NavLink to="#url"><img src="../../images/team8.jpg" alt="" className="img-fluid team-image" /></NavLink>
+              </div>
+              <div className="column">
+                <h3 className="name-pos"><NavLink to="#url">Max Stoiber</NavLink></h3>
+                <p>History Instructor</p>
+                <div className="social">
+                  <NavLink to="#facebook" className="facebook"><span className="fa fa-facebook" aria-hidden="true" /></NavLink>
+                  <NavLink to="#twitter" className="twitter"><span className="fa fa-twitter" aria-hidden="true" /></NavLink>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* end team member */}
+        </div>
+      </div>
+    </div></section>
+  {/*//team-sec*/}
+  {/* footer */}
+  <section className="w3l-footer-16">
+    <div className="w3l-footer-16-main py-5">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-4 column">
+            <div className="row">
+              <div className="col-md-8 column">
+                <NavLink className="logo-2" to="index.html">
+                  <label className="lohny-2"><span className="fa fa-graduation-cap" aria-hidden="true" />Edu</label>Line</NavLink>
+                <div className="ad-text-inf">
+                  <p><span className="color-hny">Address :</span> 27 Division St, New York, NY 10002, USA</p>
+                </div>
+                <div className="ad-text-inf">
+                  <p><span className="color-hny">Email :</span> <NavLink to="mailto:info@example.com">example.com</NavLink></p>
+                </div>
+                <div className="ad-text-inf">
+                  <p><span className="color-hny">Phone :</span> <NavLink to="tel:+142 5897555">+142
+                      5897555</NavLink></p>
+                </div>
+              </div>
+              <div className="col-md-4 column">
+                <h3>Pages</h3>
+                <ul className="footer-gd-16">
+                  <li><NavLink to="index.html">Home</NavLink></li>
+                  <li><NavLink to="about.html">About Us</NavLink></li>
+                  <li><NavLink to="services.html">Courses</NavLink></li>
+                  <li><NavLink to="#">Blog</NavLink></li>
+                  <li><NavLink to="contact.html">Contact Us</NavLink></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6 column column3 mt-lg-0 mt-4">
+            <h3>Articles</h3>
+            <ul className="list-unstyled d-flex flex-wrap">
+              <li className>
+                <div className="row">
+                  <NavLink className="col-md-5 col-4" to="#">
+                    <img className="rounded img-fluid img-responsive" src="../../images/bg1.jpg" alt="" />
+                  </NavLink>
+                  <div className="col pl-0">
+                    <NavLink className="footer-small-text" to="#">Lorem ipsum dolor sit amet adipiscin elit</NavLink>
+                    <div className="text-sub-small">Feb 20th</div>
+                  </div>
+                </div>
+              </li>
+              <li className="mt-md-0 mt-2">
+                <div className="row my-2 my-md-3">
+                  <NavLink className="col-md-5 col-4" to="#">
+                    <img className="rounded img-fluid img-responsive" src="../../images/bg3.jpg" alt="" />
+                  </NavLink>
+                  <div className="col pl-0">
+                    <NavLink className="footer-small-text" to="#">Cras at nunc sagittis, suscipit dolor</NavLink>
+                    <div className="text-sub-small">Feb 22nd</div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div className="col-lg-4 col-md-6 column column4 mt-lg-0 mt-4">
+            <h3>Newsletter </h3>
+            <div className="end-column">
+              <h4>Subscribe Here Now</h4>
+              <form action="#" className="subscribe" method="post">
+                <input type="email" name="email" placeholder="Email Address" required />
+                <button><span className="fa fa-paper-plane" aria-hidden="true" /></button>
+              </form>
+              <p>Subscribe to our mailing list and get updates to your email inbox.</p>
+            </div>
+          </div>
+        </div>
+        <div className="d-flex below-section justify-content-between align-items-center pt-4 mt-5">
+          <div className="columns text-lg-left text-center">
+            <p>© 2020 Eduline. All rights reserved. Design by <NavLink to="https://w3layouts.com/" target="_blank">
+                W3Layouts</NavLink>
+            </p>
+          </div>
+          <div className="columns-2 mt-md-0 mt-3">
+            <ul className="social">
+              <li><NavLink to="#facebook"><span className="fa fa-facebook" aria-hidden="true" /></NavLink>
+              </li>
+              <li><NavLink to="#linkedin"><span className="fa fa-linkedin" aria-hidden="true" /></NavLink>
+              </li>
+              <li><NavLink to="#twitter"><span className="fa fa-twitter" aria-hidden="true" /></NavLink>
+              </li>
+              <li><NavLink to="#google"><span className="fa fa-google-plus" aria-hidden="true" /></NavLink>
+              </li>
+              <li><NavLink to="#github"><span className="fa fa-github" aria-hidden="true" /></NavLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    {/* move top */}
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+      <span className="fa fa-angle-up" />
+    </button>
+    {/* //move top */}
+  </section>
+</div>
+
+    </div>
+  )
 }
-
-const mapStateToProps = state => {
-  return {
-    listCourse: state.khoaHocReducer.listCourse
-  };
-};
-
-const mapDispatchToProps = dispath => {
-  return {
-    getListCourse: () => {
-      dispath(action.actGetListCourseAPI());
-    }
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(About);

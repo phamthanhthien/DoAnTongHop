@@ -44,7 +44,7 @@ export default function Home() {
                       </NavLink>
                     </li>
                     <li className="nav-item">
-                      <NavLink className="nav-link" to="/about.html">
+                      <NavLink className="nav-link" to="/about">
                         About
                       </NavLink>
                     </li>
