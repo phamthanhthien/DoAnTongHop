@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import Navbar from "./../components/Navbar";
+import Footer from "./../components/Footer";
 import { Route } from "react-router-dom";
 
 const HomeLayout = props => {
@@ -7,6 +8,7 @@ const HomeLayout = props => {
     <Fragment>
       <Navbar />
       {props.children}
+      <Footer />
     </Fragment>
   );
 };

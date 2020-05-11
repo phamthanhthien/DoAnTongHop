@@ -8,7 +8,7 @@ export default function Material() {
   return (
     <div className={classes.content}>
       <h1 className={classes.title}>Button demo</h1>
-      <span>Dinh Phuc Nguyen</span>
+      <span>Pham Thanh Thien</span>
       <Button variant="contained" color="primary">
         Submit
       </Button>
