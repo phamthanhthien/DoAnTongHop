@@ -2,11 +2,13 @@ import React, { Fragment } from "react";
 import { Route, Redirect } from "react-router-dom";
 import NavbarAdmin from "./../components/NavbarAdmin";
 
-const AdminLayout = props => {
+const AdminLayout = (props) => {
   return (
     <Fragment>
       <NavbarAdmin />
-      {props.children}
+      <div class="main-content">
+        <div className="container-fluid content-top-gap">{props.children}</div>
+      </div>
     </Fragment>
   );
 };
@@ -15,7 +17,7 @@ export default function AdminTemplate({ Component, ...props }) {
   return (
     <Route
       {...props}
-      render={propsComponent => {
+      render={(propsComponent) => {
         if (localStorage.getItem("userAdmin")) {
           return (
             <AdminLayout>

@@ -211,6 +211,9 @@ class ChiTietKhoaHoc extends Component {
                     </span>
                     <span>Off 90%</span>
                   </div>
+                  <p>
+                    <i className="fa fa-clock" /> 3 days left at this price!
+                  </p>
                   <button type="button" className="btn btn-danger w-100">
                     Add to cart
                   </button>

@@ -69,7 +69,7 @@ export default class Footer extends Component {
                 <div className="col-lg-4 col-md-6 column column3 mt-lg-0 mt-4">
                   <h3>Articles</h3>
                   <ul className="list-unstyled d-flex flex-wrap">
-                    <li className>
+                    <li>
                       <div className="row">
                         <NavLink className="col-md-5 col-4" to="#">
                           <img

@@ -9,7 +9,7 @@ export default function About() {
     <div className="breadcrumb-infhny">
       <header className="top-headerhny">
         {/*/nav*/}
-        <nav className="navbar navbar-expand-lg navbar-light fill">
+        <nav className="navbar navbar-expand-lg navbar-light fill" style={{ padding: "0" }}>
           <div className="container-fluid">
             <NavLink className="navbar-brand" to="index.html">
               <label className="lohny"><span className="fa fa-graduation-cap" aria-hidden="true" />Edu</label>Line</NavLink>
