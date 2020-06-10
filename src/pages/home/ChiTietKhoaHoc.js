@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import * as action from "./../../redux/action/index";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import Banner from "../../components/Banner";
+import { Button } from "@material-ui/core";
 
 class ChiTietKhoaHoc extends Component {
   componentDidMount() {
@@ -14,103 +16,7 @@ class ChiTietKhoaHoc extends Component {
     // let { course } = this.props;
     return (
       <div>
-        <section className="w3l-banner-slider-main w3l-inner-page-main">
-          <div className="breadcrumb-infhny">
-            <header className="top-headerhny">
-              {/*/nav*/}
-              <nav className="navbar navbar-expand-lg navbar-light fill">
-                <div className="container-fluid">
-                  <NavLink className="navbar-brand" to="/index.html">
-                    <label className="lohny">
-                      <span
-                        className="fa fa-graduation-cap"
-                        aria-hidden="true"
-                      />
-                      Edu
-                    </label>
-                    Line
-                  </NavLink>
-                  {/* if logo is image enable this   
-        <NavLink class="navbar-brand" to="/#index.html">
-          <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-        </NavLink> */}
-                  <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                  >
-                    <span className="navbar-toggler-icon" />
-                  </button>
-                  <div
-                    className="collapse navbar-collapse"
-                    id="navbarSupportedContent"
-                  >
-                    <ul className="navbar-nav mx-lg-auto ml-auto">
-                      <li className="nav-item">
-                        <NavLink className="nav-link" to="/">
-                          Home
-                        </NavLink>
-                      </li>
-                      <li className="nav-item">
-                        <NavLink className="nav-link" to="/about">
-                          About
-                        </NavLink>
-                      </li>
-                      <li className="nav-item">
-                        <NavLink className="nav-link" to="/danh-sach-khoa-hoc">
-                          Courses
-                        </NavLink>
-                      </li>
-                      <li className="nav-item">
-                        <NavLink className="nav-link" to="/contact.html">
-                          Contact
-                        </NavLink>
-                      </li>
-                    </ul>
-                  </div>
-                  <form
-                    action="#"
-                    method="post"
-                    className="d-flex searchhny-form"
-                  >
-                    <input
-                      type="search"
-                      placeholder="Search Here..."
-                      required="required"
-                    />
-                    <button type="submit">
-                      <span className="fa fa-search" aria-hidden="true" />
-                    </button>
-                  </form>
-                </div>
-              </nav>
-              {/*//nav*/}
-            </header>
-            {/* /breadcrumbs*/}
-            <div className="container">
-              <nav aria-label="breadcrumb" className="breadcrumb-info">
-                <h2 className="hny-title text-center">Courses</h2>
-                <ol className="breadcrumb mb-0">
-                  <li className="breadcrumb-item">
-                    <NavLink to="/">Home</NavLink>
-                  </li>
-                  <li className="breadcrumb-item">
-                    <NavLink to="/danh-sach-khoa-hoc">Courses</NavLink>
-                  </li>
-                  <li className="breadcrumb-item active" aria-current="page">
-                    {this.props.course.tenKhoaHoc}
-                  </li>
-                </ol>
-              </nav>
-            </div>
-            {/* //breadcrumbs*/}
-          </div>
-          {/*//banner-slider*/}
-        </section>
+        <Banner />
 
         <section className="info__couser my-5">
           <div className="container">
@@ -205,23 +111,29 @@ class ChiTietKhoaHoc extends Component {
                 />
                 <div style={{ margin: 15 }}>
                   <div className="d-flex justify-content-around">
-                    <h3>$9.99</h3>
+                    <h3>$30.0</h3>
                     <span style={{ textDecoration: "line-through" }}>
-                      $104.99{" "}
+                      $300{" "}
                     </span>
                     <span>Off 90%</span>
                   </div>
                   <p>
                     <i className="fa fa-clock" /> 3 days left at this price!
                   </p>
-                  <button type="button" className="btn btn-danger w-100">
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    className="w-100"
+                  >
                     Add to cart
-                  </button>
+                  </Button>
                   <button
                     type="button"
                     className="btn btn-outline-success w-100 mt-2"
                   >
-                    Buy now
+                    <Link to="/checkout" className="text-decoration-none">
+                      Buy now
+                    </Link>
                   </button>
                 </div>
                 <p>This course includes</p>
@@ -252,14 +164,12 @@ class ChiTietKhoaHoc extends Component {
                   }}
                 >
                   <div style={{ textAlign: "center" }}>
-                    <Link href="#" style={{ textDecoration: "none" }}>
-                      Apply coupon
-                    </Link>
+                    <Button color="primary">Apply coupon</Button>
                   </div>
                   <hr />
-                  <Link href="#" style={{ textDecoration: "none" }}>
-                    <i className="fa fa-share" /> <span>Share</span>
-                  </Link>
+                  <Button color="primary">
+                    <i className="fa fa-share" /> Share
+                  </Button>
                 </div>
               </div>
             </div>

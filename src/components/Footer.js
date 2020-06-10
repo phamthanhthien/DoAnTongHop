@@ -13,7 +13,7 @@ export default class Footer extends Component {
                 <div className="col-lg-4 column">
                   <div className="row">
                     <div className="col-md-8 column">
-                      <NavLink className="logo-2" to="index.html">
+                      <NavLink className="logo-2" to="index">
                         <label className="lohny-2">
                           <span
                             className="fa fa-graduation-cap"
@@ -25,22 +25,23 @@ export default class Footer extends Component {
                       </NavLink>
                       <div className="ad-text-inf">
                         <p>
-                          <span className="color-hny">Address :</span> 27
-                          Division St, New York, NY 10002, USA
+                          <span className="color-hny">Address :</span> 103
+                          Nguyen Cu Trinh, Nguyen Cu Trinh Ward, District 1, Ho
+                          Chi Minh, Vietnam
                         </p>
                       </div>
                       <div className="ad-text-inf">
                         <p>
-                          <span className="color-hny">Email :</span>{" "}
-                          <NavLink to="mailto:info@example.com">
-                            example.com
+                          <span className="color-hny">Email :</span>
+                          <NavLink to="mailto:phamthanhthien1910@gmail.com">
+                            phamthanhthien1910@gmail.com
                           </NavLink>
                         </p>
                       </div>
                       <div className="ad-text-inf">
                         <p>
-                          <span className="color-hny">Phone :</span>{" "}
-                          <NavLink to="tel:+142 5897555">+142 5897555</NavLink>
+                          <span className="color-hny">Phone :</span>
+                          <NavLink to="tel:+84 73 47 97">+84 73 47 97</NavLink>
                         </p>
                       </div>
                     </div>
@@ -48,19 +49,19 @@ export default class Footer extends Component {
                       <h3>Pages</h3>
                       <ul className="footer-gd-16">
                         <li>
-                          <NavLink to="index.html">Home</NavLink>
+                          <NavLink to="/">Home</NavLink>
                         </li>
                         <li>
-                          <NavLink to="about.html">About Us</NavLink>
+                          <NavLink to="/about">About Us</NavLink>
                         </li>
                         <li>
-                          <NavLink to="services.html">Courses</NavLink>
+                          <NavLink to="/courses">Courses</NavLink>
                         </li>
                         <li>
                           <NavLink to="#">Blog</NavLink>
                         </li>
                         <li>
-                          <NavLink to="contact.html">Contact Us</NavLink>
+                          <NavLink to="/contact">Contact Us</NavLink>
                         </li>
                       </ul>
                     </div>
@@ -134,9 +135,7 @@ export default class Footer extends Component {
                 <div className="columns text-lg-left text-center">
                   <p>
                     © 2020 Eduline. All rights reserved. Design by{" "}
-                    <a href="https://phamthanhthien.com/">
-                      phamthanhthien.com
-                    </a>
+                    <a href="https://phamthanhthien.com/">phamthanhthien.com</a>
                   </p>
                 </div>
                 <div className="columns-2 mt-md-0 mt-3">
@@ -175,7 +174,7 @@ export default class Footer extends Component {
             </div>
           </div>
           {/* move top */}
-          <button onclick="topFunction()" id="movetop" title="Go to top">
+          <button id="movetop" title="Go to top">
             <span className="fa fa-angle-up" />
           </button>
           {/* //move top */}

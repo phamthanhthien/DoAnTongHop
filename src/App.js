@@ -50,7 +50,7 @@ function App() {
 
           {/* <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/danh-sach-khoa-hoc" component={DanhSachKhoaHoc} />
+          <Route path="/couser" component={DanhSachKhoaHoc} />
           <Route component={PageNotFound} /> */}
         </Switch>
       </div>

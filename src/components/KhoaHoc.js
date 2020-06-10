@@ -12,7 +12,7 @@ const KhoaHoc =({ khoaHoc }) =>  {
     //       <p className="card-text">{khoaHoc.moTa}</p>
     //       <NavLink
     //         className="btn btn-success"
-    //         to={`/chi-tiet-khoa-hoc/${khoaHoc.maKhoaHoc}`}
+    //         to={`/couser-detail/${khoaHoc.maKhoaHoc}`}
     //       >
     //         Chi tiết
     //       </NavLink>
@@ -42,7 +42,7 @@ const KhoaHoc =({ khoaHoc }) =>  {
             </div>
             <NavLink
               className="btn btn-success"
-              to={`/chi-tiet-khoa-hoc/${khoaHoc.maKhoaHoc}`}
+              to={`/couser-detail/${khoaHoc.maKhoaHoc}`}
             >
               Info
             </NavLink>

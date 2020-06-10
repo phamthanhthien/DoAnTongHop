@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export default function Home() {
-  
   return (
     <div>
       <section className="w3l-banner-slider-main">
@@ -11,17 +10,13 @@ export default function Home() {
             {/*/nav*/}
             <nav className="navbar navbar-expand-lg navbar-light fill">
               <div className="container-fluid">
-                <NavLink className="navbar-brand" to="/index.html">
+                <NavLink className="navbar-brand" to="/">
                   <label className="lohny">
                     <span className="fa fa-graduation-cap" aria-hidden="true" />
                     Edu
                   </label>
                   Line
                 </NavLink>
-                {/* if logo is image enable this   
-    <NavLink class="navbar-brand" to="/#index.html">
-      <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-    </NavLink> */}
                 <button
                   className="navbar-toggler"
                   type="button"
@@ -49,7 +44,7 @@ export default function Home() {
                       </NavLink>
                     </li>
                     <li className="nav-item">
-                      <NavLink className="nav-link" to="/danh-sach-khoa-hoc">
+                      <NavLink className="nav-link" to="/courses">
                         Courses
                       </NavLink>
                     </li>
@@ -59,7 +54,16 @@ export default function Home() {
                       </NavLink>
                     </li>
                   </ul>
+                  <div className="cart">
+                    <NavLink to="/gio-hang">
+                      <i
+                        className="fa fa-shopping-cart mx-3"
+                        style={{ color: "#fff", fontSize: "35px" }}
+                      ></i>
+                    </NavLink>
+                  </div>
                 </div>
+
                 <form
                   action="#"
                   method="post"
@@ -102,7 +106,7 @@ export default function Home() {
                     <p>They get their doubts solved instantly, 24x7</p>
                     <div className="button-4 mx-auto">
                       <div className="eff-4" />
-                      <NavLink to="/danh-sach-khoa-hoc"> View Courses</NavLink>
+                      <NavLink to="/courses"> View Courses</NavLink>
                     </div>
                   </div>
                 </div>
@@ -114,7 +118,7 @@ export default function Home() {
                     <p>We believe that every student is unique</p>
                     <div className="button-4 mx-auto">
                       <div className="eff-4" />
-                      <NavLink to="/danh-sach-khoa-hoc"> View Courses</NavLink>
+                      <NavLink to="/courses"> View Courses</NavLink>
                     </div>
                   </div>
                 </div>
@@ -126,7 +130,7 @@ export default function Home() {
                     <p>They get their doubts solved instantly, 24x7</p>
                     <div className="button-4 mx-auto">
                       <div className="eff-4" />
-                      <NavLink to="/danh-sach-khoa-hoc"> View Courses</NavLink>
+                      <NavLink to="/courses"> View Courses</NavLink>
                     </div>
                   </div>
                 </div>
@@ -138,7 +142,7 @@ export default function Home() {
                     <p>We believe that every student is unique</p>
                     <div className="button-4 mx-auto">
                       <div className="eff-4" />
-                      <NavLink to="/danh-sach-khoa-hoc"> View Courses</NavLink>
+                      <NavLink to="/courses"> View Courses</NavLink>
                     </div>
                   </div>
                 </div>

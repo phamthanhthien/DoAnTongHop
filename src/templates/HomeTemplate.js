@@ -3,7 +3,7 @@ import Navbar from "./../components/Navbar";
 import Footer from "./../components/Footer";
 import { Route } from "react-router-dom";
 
-const HomeLayout = props => {
+const HomeLayout = (props) => {
   return (
     <Fragment>
       <Navbar />
@@ -17,7 +17,7 @@ export default function HomeTemplate({ Component, ...props }) {
   return (
     <Route
       {...props}
-      render={propsComponent => (
+      render={(propsComponent) => (
         <HomeLayout>
           <Component {...propsComponent} />
         </HomeLayout>
