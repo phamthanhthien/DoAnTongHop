@@ -48,6 +48,7 @@ export default function About() {
                   <div className="sub-mission one-top">
                     <div className="mission-sec-gd">
                       <img
+                        // src="../../images/p1.jpg"
                         src="../../images/p1.jpg"
                         alt=""
                         className="img-fluid"

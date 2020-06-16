@@ -32,7 +32,7 @@ export default function gioHang() {
           <div className="py-3">
             <div className="row">
               <div className="col-md-9">
-                <h5>2 couser in cart</h5>
+                <h5>2 Course in cart</h5>
                 {/* Cart item */}
                 <div className="cart_item bg-light rounded-lg border my-2">
                   <div className="row p-1">
@@ -83,15 +83,15 @@ export default function gioHang() {
                     <div className="col-md-2 d-flex align-items-center">
                       <img
                         src={
-                          "http://elearning0706.cybersoft.edu.vn/hinhanh/complete-c-basic-to-advanced.jpg"
+                          "http://elearning0706.cybersoft.edu.vn/hinhanh/the-complete-angular-course-beginner-to-advanced.jpg"
                         }
                         alt="..."
                         className="img-fluid"
                       />
                     </div>
                     <div className="col-md-6">
-                      <b>Complete C++ : Basic to Advanced</b>
-                      <p>Learn C++ from beginner level to advanced level</p>
+                      <b>The Complete Angular Course: Beginner to Advanced</b>
+                      <p>The most comprehensive Angular 4 (Angular 2+) course. Build a real e-commerce app with Angular, Firebase and Bootstrap 4</p>
                     </div>
                     <div className="col-md-3 d-flex align-items-center">
                       <ul>

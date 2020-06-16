@@ -42,7 +42,7 @@ const KhoaHoc =({ khoaHoc }) =>  {
             </div>
             <NavLink
               className="btn btn-success"
-              to={`/couser-detail/${khoaHoc.maKhoaHoc}`}
+              to={`/courses-detail/${khoaHoc.maKhoaHoc}`}
             >
               Info
             </NavLink>

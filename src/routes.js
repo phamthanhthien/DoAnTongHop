@@ -9,8 +9,22 @@ import ThemKhoaHoc from "./pages/admin/ThemKhoaHoc";
 import Cart from "./pages/home/Cart";
 import Checkout from "./pages/home/Checkout";
 import Contact from "./pages/home/Contact";
+import Login from "./pages/home/Login";
+import SignUp from "./pages/home/Signup";
 
 const routesHome = [
+  {
+    path: "/login",
+    exact: false,
+    name: 'login',
+    component: Login,
+  },
+  {
+    path: "/signup",
+    exact: false,
+    name: 'signup',
+    component: SignUp,
+  },
   {
     path: "/",
     exact: true,
@@ -35,7 +49,7 @@ const routesHome = [
     component: ChiTietKhoaHoc,
   },
   {
-    path: "/gio-hang",
+    path: "/shopping-cart",
     exact: false,
     component: Cart,
   },

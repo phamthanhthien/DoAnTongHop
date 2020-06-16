@@ -15,7 +15,7 @@ export default class Navbar extends Component {
                       exact
                       activeClassName="active"
                       className="sign-in"
-                      to="/"
+                      to="/login"
                     >
                       <span className="fa fa-user" /> Sign In
                     </NavLink>

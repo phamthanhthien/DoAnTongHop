@@ -1,7 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { routesHome } from "../routes";
 
 export default function banner() {
+  const routes = routesHome;
   return (
     <section className="w3l-banner-slider-main w3l-inner-page-main">
       <div className="breadcrumb-infhny">
@@ -54,7 +56,7 @@ export default function banner() {
                   </li>
                 </ul>
                 <div className="cart">
-                  <NavLink to="/gio-hang">
+                  <NavLink to="/shopping-cart">
                     <i
                       className="fa fa-shopping-cart mx-3"
                       style={{ color: "#fff", fontSize: "35px" }}
@@ -84,9 +86,15 @@ export default function banner() {
               <li className="breadcrumb-item">
                 <NavLink to="/">Home</NavLink>
               </li>
-              <li className="breadcrumb-item active" aria-current="page">
-                Shopping cart
-              </li>
+              {routes.map((key, index) => (
+                <li
+                  className="breadcrumb-item active"
+                  aria-current="page"
+                  key={index}
+                >
+                  {index.name}
+                </li>
+              ))}
             </ol>
           </nav>
         </div>
