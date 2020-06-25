@@ -55,7 +55,7 @@ export default function Home() {
                     </li>
                   </ul>
                   <div className="cart">
-                    <NavLink to="/gio-hang">
+                    <NavLink to="/shopping-cart">
                       <i
                         className="fa fa-shopping-cart mx-3"
                         style={{ color: "#fff", fontSize: "35px" }}

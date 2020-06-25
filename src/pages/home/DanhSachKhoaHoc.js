@@ -3,7 +3,7 @@ import KhoaHoc from "./../../components/KhoaHoc";
 import { connect } from "react-redux";
 import * as action from "./../../redux/action/index";
 import { NavLink } from "react-router-dom";
-import Banner from '../../components/Banner';
+import Banner from "../../components/Banner";
 
 class DanhSachKhoaHoc extends Component {
   constructor(props) {
@@ -18,10 +18,34 @@ class DanhSachKhoaHoc extends Component {
     this.props.getListCourse();
   }
 
-  functionAdd = () => {
-    this.setState({
-      number: this.state.number + 6,
-    });
+  functionAdd = async (item) => {
+    const cartArray = (await !JSON.parse(localStorage.getItem(`cartItem`)))
+      ? []
+      : JSON.parse(localStorage.getItem(`cartItem`));
+    var itemStorage =
+      (await cartArray.length) === 0
+        ? [{ ...item, sl: 1 }]
+        : { ...item, sl: 1 };
+    console.log(cartArray);
+
+    if (cartArray.length === 0) {
+      localStorage.setItem(`cartItem`, JSON.stringify(itemStorage));
+    } else {
+      let itemNew = false;
+      await cartArray.forEach(async (i) => {
+        if (i.maKhoaHoc === item.maKhoaHoc) {
+          i.sl += 1;
+          localStorage.setItem(`cartItem`, JSON.stringify(cartArray));
+          return (itemNew = false);
+        } else {
+          itemNew = true;
+        }
+      });
+      if (itemNew === true) {
+        await cartArray.push(itemStorage);
+        localStorage.setItem(`cartItem`, JSON.stringify(cartArray));
+      }
+    }
   };
 
   renderHTML = () => {
@@ -31,7 +55,7 @@ class DanhSachKhoaHoc extends Component {
           <KhoaHoc
             key={index}
             khoaHoc={item}
-            actionFunction={this.functionAdd}
+            actionFunction={() => this.functionAdd(item)}
           />
         );
       }

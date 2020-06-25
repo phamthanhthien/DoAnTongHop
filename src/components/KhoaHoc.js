@@ -1,8 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const KhoaHoc =({ khoaHoc }) =>  {
-
+const KhoaHoc = ({ khoaHoc, actionFunction }) => {
   return (
     // <div className="col-sm-4">
     //   <div className="card">
@@ -46,13 +45,18 @@ const KhoaHoc =({ khoaHoc }) =>  {
             >
               Info
             </NavLink>
-            <button className="price-course btn"> $300 </button>
+            <button
+              className="price-course btn"
+              onClick={() => actionFunction(khoaHoc)}
+            >
+              {" "}
+              $300{" "}
+            </button>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-
-export default  KhoaHoc;
+export default KhoaHoc;
