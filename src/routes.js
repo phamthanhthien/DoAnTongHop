@@ -3,11 +3,8 @@ import About from "./pages/home/About";
 import DanhSachKhoaHoc from "./pages/home/DanhSachKhoaHoc";
 import ChiTietKhoaHoc from "./pages/home/ChiTietKhoaHoc";
 
-import HomeAdmin from "./pages/admin/HomeAdmin";
-import UserManagerment from "./pages/admin/user-management/UserManagerment";
-import ThemKhoaHoc from "./pages/admin/ThemKhoaHoc";
 import Cart from "./pages/home/Cart";
-import Checkout from "./pages/home/Checkout";
+import Checkout from "./pages/home/Checkout/Checkout";
 import Contact from "./pages/home/Contact";
 import Login from "./pages/home/Login";
 import SignUp from "./pages/home/Signup";
@@ -16,32 +13,43 @@ const routesHome = [
   {
     path: "/login",
     exact: false,
-    name: 'login',
     component: Login,
-  },
-  {
-    path: "/signup",
-    exact: false,
-    name: 'signup',
-    component: SignUp,
   },
   {
     path: "/",
     exact: true,
-    name: 'Home',
+    name: "Home",
     component: Home,
   },
   {
     path: "/about",
     exact: false,
-    name: 'About',
+    name: "About",
     component: About,
   },
   {
     path: "/courses",
     exact: false,
-    name: 'Khóa học',
+    name: "Courses",
     component: DanhSachKhoaHoc,
+  },
+  {
+    path: "/contact",
+    exact: false,
+    name: "Contact",
+    component: Contact,
+  },
+  {
+    path: "/shopping-cart",
+    exact: false,
+    name: "Shopping Cart",
+    component: Cart,
+  },
+  {
+    path: "/checkout",
+    exact: false,
+    name: "Checkout",
+    component: Checkout,
   },
   {
     path: "/courses-detail/:id",
@@ -49,39 +57,12 @@ const routesHome = [
     component: ChiTietKhoaHoc,
   },
   {
-    path: "/shopping-cart",
+    path: "/signup",
     exact: false,
-    component: Cart,
-  },
-  {
-    path: "/checkout",
-    exact: false,
-    component: Checkout,
-  },
-  {
-    path: "/contact",
-    exact: false,
-    name: 'Contact',
-    component: Contact,
+    component: SignUp,
   },
 ];
 
-const routesAdmin = [
-  {
-    path: "/admin/dashboard",
-    exact: false,
-    component: HomeAdmin,
-  },
-  {
-    path: "/admin/user-managerment",
-    exact: false,
-    component: UserManagerment,
-  },
-  {
-    path: "/admin/them-khoa-hoc",
-    exact: false,
-    component: ThemKhoaHoc,
-  },
-];
+const routesAdmin = [];
 
 export { routesHome, routesAdmin };

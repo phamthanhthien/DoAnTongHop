@@ -28,17 +28,6 @@ export default function GioHang() {
           <div className="features6-block">
             <div className="container">
               <div className="row title-content">
-                {/* <div className="col-lg-4 title-left">
-                  <h3 className="hny-title">What We Provide</h3>
-                </div>
-                <div className="col-lg-8 title-info">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Recusandae eligendi minima accusantium reiciendis,
-                    cupiditate optio corrupti quis quam at!.Duis aute irure
-                    dolor in reprehenderit in voluptate velit esse cillum.
-                  </p>
-                </div> */}
               </div>
             </div>
           </div>
@@ -64,7 +53,7 @@ export default function GioHang() {
                   <br />
                   <span>Sale of 90%</span> <br />
                   <Button
-                    href="/checkout"
+                    to="/checkout"
                     variant="outlined"
                     color="secondary"
                     className="w-100"

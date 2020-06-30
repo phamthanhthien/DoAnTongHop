@@ -18,7 +18,7 @@ class DanhSachKhoaHoc extends Component {
     this.props.getListCourse();
   }
 
-  functionAdd = async (item) => {
+  functionAdd = (item) => async() => {
     const cartArray = (await !JSON.parse(localStorage.getItem(`cartItem`)))
       ? []
       : JSON.parse(localStorage.getItem(`cartItem`));
@@ -55,7 +55,7 @@ class DanhSachKhoaHoc extends Component {
           <KhoaHoc
             key={index}
             khoaHoc={item}
-            actionFunction={() => this.functionAdd(item)}
+            actionFunction={this.functionAdd(item)}
           />
         );
       }
@@ -63,11 +63,18 @@ class DanhSachKhoaHoc extends Component {
     });
   };
 
-  render() {
+  functionMore = ()  => {
+    this.setState(state => {
+      state.number += 6
+      this.render()
+    })
+    
+  }
+
+  render() { 
     return (
       <div>
         <Banner />
-
         <section className="features-6">
           <div className="features6-block py-5">
             <div className="container py-lg-5">
@@ -163,13 +170,15 @@ class DanhSachKhoaHoc extends Component {
                   <div className="row mt-3">{this.renderHTML()}</div>
                 </div>
               </div>
+              <div>
+              </div>
               {/* /pagination*/}
               <div className="pagination p1">
                 {this.state.number < this.props.listCourse.length && (
                   <button
                     className="price-course btn"
                     style={{ width: "20%" }}
-                    onClick={this.functionAdd}
+                    onClick={this.functionMore}
                   >
                     <i className="fa fa-bars" /> More
                   </button>
@@ -181,7 +190,7 @@ class DanhSachKhoaHoc extends Component {
         </section>
       </div>
     );
-  }
+  } 
 }
 
 const mapStateToProps = (state) => {

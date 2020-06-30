@@ -1,32 +1,41 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+const MySwal = withReactContent(Swal);
 
 const KhoaHoc = ({ khoaHoc, actionFunction }) => {
-  return (
-    // <div className="col-sm-4">
-    //   <div className="card">
-    //     <img className="card-img-top" src={khoaHoc.hinhAnh} alt="" />
-    //     <div className="card-body">
-    //       <h4 className="card-title">{khoaHoc.tenKhoaHoc}</h4>
-    //       <p className="card-text">{khoaHoc.moTa}</p>
-    //       <NavLink
-    //         className="btn btn-success"
-    //         to={`/couser-detail/${khoaHoc.maKhoaHoc}`}
-    //       >
-    //         Chi tiết
-    //       </NavLink>
-    //     </div>
-    //   </div>
-    // </div>
+  const aleart2 = () => {
+    MySwal.fire({
+      title: "Are you sure?",
+      text: "",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, add to cart!",
+    }).then(() => {
+      return MySwal.fire(
+        "Add to cart!",
+        "Your course has been add to cart.",
+        "success"
+      );
+    });
+  };
 
+  return (
     <div className="col-lg-4 col-md-6 course-grid">
       <div className="course-grid-inf">
-        <NavLink to="/">
+        <NavLink to={`/courses-detail/${khoaHoc.maKhoaHoc}`}>
           <img src={khoaHoc.hinhAnh} className="img-fuild" alt="" />
         </NavLink>
         <div className="course-content">
           <div className="course-info">
-            <NavLink to="/" className="course-titlegulp-wrapper">
+            <NavLink
+              to={`/courses-detail/${khoaHoc.maKhoaHoc}`}
+              className="course-titlegulp-wrapper"
+            >
               <h3 className="course-title">{khoaHoc.tenKhoaHoc}</h3>
             </NavLink>
           </div>
@@ -47,10 +56,10 @@ const KhoaHoc = ({ khoaHoc, actionFunction }) => {
             </NavLink>
             <button
               className="price-course btn"
+              onCSubmitk={aleart2}
               onClick={() => actionFunction(khoaHoc)}
             >
-              {" "}
-              $300{" "}
+              $300
             </button>
           </div>
         </div>

@@ -131,7 +131,7 @@ class ChiTietKhoaHoc extends Component {
                     type="button"
                     className="btn btn-outline-success w-100 mt-2"
                   >
-                    <Link to="/checkout" className="text-decoration-none">
+                    <Link to="/shopping-cart" className="text-decoration-none">
                       Buy now
                     </Link>
                   </button>

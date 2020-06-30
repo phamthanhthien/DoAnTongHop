@@ -6,6 +6,7 @@ import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
+import { NavLink } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
@@ -14,18 +15,17 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { callAPI } from "../../utils/CallAPI";
 import { useHistory } from "react-router-dom";
-import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
+      {"Design by © "}
       <Link color="inherit" href="https://phamthanhthien.com/">
-        Your Website
+        phamthanhthien.com 
       </Link>
-      {new Date().getFullYear()}
-      {"."}
+      {/* {new Date().getFullYear()} */}
     </Typography>
   );
 }
@@ -82,7 +82,17 @@ export default function SignInSide() {
           //Chuyển sang trang home
           history.push(`/`);
         } else {
-          alert(`Bạn không có quyền truy cập`);
+          MySwal.fire({
+            title: <p></p>,
+            footer: `EduLine Admin`,
+            onOpen: () => {
+              // `MySwal` is a subclass of `Swal`
+              //   with all the same instance & static methods
+              MySwal.clickConfirm();
+            },
+          }).then(() => {
+            return MySwal.fire(<p>{`Bạn không có quyền truy cập`}</p>);
+          });
         }
       })
       .catch((err) => {
@@ -159,9 +169,9 @@ export default function SignInSide() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="/signup" variant="body2">
+                <NavLink to="/signup" variant="body2">
                   {"Don't have an account? Sign Up"}
-                </Link>
+                </NavLink>
               </Grid>
             </Grid>
             <Box mt={5}>

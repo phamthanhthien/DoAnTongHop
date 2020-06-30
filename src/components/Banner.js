@@ -1,9 +1,16 @@
-import React from "react";
+/* eslint-disable react-hooks/rules-of-hooks */
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { routesHome } from "../routes";
 
 export default function banner() {
   const routes = routesHome;
+
+  const [title, setTitle] = useState(``);
+  useEffect(() => {
+    setTitle(``);
+  }, []);
+
   return (
     <section className="w3l-banner-slider-main w3l-inner-page-main">
       <div className="breadcrumb-infhny">
@@ -34,26 +41,21 @@ export default function banner() {
                 id="navbarSupportedContent"
               >
                 <ul className="navbar-nav mx-lg-auto ml-auto">
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/">
-                      Home
-                    </NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/about">
-                      About
-                    </NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/courses">
-                      Courses
-                    </NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/contact">
-                      Contact
-                    </NavLink>
-                  </li>
+                  {routes.map((text, index) => (
+                    <li className="nav-item">
+                      <NavLink
+                        exact
+                        activeClassName="active"
+                        className="nav-link"
+                        key={text}
+                        to={text.path}
+                        button
+                        onClick={() => setTitle(text.name)}
+                      >
+                        {text.name}
+                      </NavLink>
+                    </li>
+                  ))}
                 </ul>
                 <div className="cart">
                   <NavLink to="/shopping-cart">
@@ -81,20 +83,14 @@ export default function banner() {
         {/* /breadcrumbs*/}
         <div className="container">
           <nav aria-label="breadcrumb" className="breadcrumb-info">
-            <h2 className="hny-title text-center">Shopping cart</h2>
+            <h2 className="hny-title text-center">{title}</h2>
             <ol className="breadcrumb mb-0">
               <li className="breadcrumb-item">
                 <NavLink to="/">Home</NavLink>
               </li>
-              {routes.map((key, index) => (
-                <li
-                  className="breadcrumb-item active"
-                  aria-current="page"
-                  key={index}
-                >
-                  {index.name}
-                </li>
-              ))}
+              <li className="breadcrumb-item active" aria-current="page">
+                {title}
+              </li>
             </ol>
           </nav>
         </div>
