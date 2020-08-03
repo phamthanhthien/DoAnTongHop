@@ -2,7 +2,14 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
 export default class Navbar extends Component {
-  render() {
+
+  user = JSON.parse(localStorage.getItem(`user`))
+  
+  onLogOut = () => {
+    localStorage.removeItem(`user`)
+  }
+
+  render() { 
     return (
       <section className="w3l-top-header-content">
         <div className="hny-top-menu">
@@ -17,7 +24,7 @@ export default class Navbar extends Component {
                       className="sign-in"
                       to="/login"
                     >
-                      <span className="fa fa-user" /> Sign In
+                      <span className="fa fa-user" /> {this.user ?  this.user.taiKhoan : `Sigin`}
                     </NavLink>
                   </li>
                   <li>
@@ -46,16 +53,6 @@ export default class Navbar extends Component {
                     </NavLink>
                   </li>
                 </ul>
-                {/* <ul className="accounts col-md-5">
-                  <li className="top_li">
-                    <span className="fa fa-mobile" />
-                    <a href="tel:+142 5897555">+142 5897555</a>
-                  </li>
-                  <li className="top_li mr-lg-0">
-                    <span className="fa fa-envelope-o" />
-                    <a href="mailto:info@example.com">Need help? Contact Us </a>
-                  </li>
-                </ul> */}
               </div>
             </div>
           </div>

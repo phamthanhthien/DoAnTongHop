@@ -49,7 +49,7 @@ export default function Home() {
                       </NavLink>
                     </li>
                     <li className="nav-item">
-                      <NavLink className="nav-link" to="/contact.html">
+                      <NavLink className="nav-link" to="/contact">
                         Contact
                       </NavLink>
                     </li>

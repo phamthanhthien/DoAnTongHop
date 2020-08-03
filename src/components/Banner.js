@@ -1,10 +1,21 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, userHistory, useHistory } from "react-router-dom";
 import { routesHome } from "../routes";
 
 export default function banner() {
   const routes = routesHome;
+
+  let history = useHistory();
+
+  const onCheckOut = () => {
+    if(localStorage.getItem(`user`)){
+      history.push('/checkout');
+    } else { 
+      history.push(`/login`)
+    }
+  }
 
   const [title, setTitle] = useState(``);
   useEffect(() => {
@@ -48,9 +59,9 @@ export default function banner() {
                         activeClassName="active"
                         className="nav-link"
                         key={text}
-                        to={text.path}
+                        to={text.name === `Checkout` ? "/login" : text.path}
                         button
-                        onClick={() => setTitle(text.name)}
+                        onClick={text.name === `Checkout` ? onCheckOut : () => setTitle(text.name)}
                       >
                         {text.name}
                       </NavLink>

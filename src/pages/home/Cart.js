@@ -1,18 +1,36 @@
+/* eslint-disable no-undef */
 import React, { useState, useEffect } from "react";
 import Button from "@material-ui/core/Button";
 import Banner from "../../components/Banner";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 export default function GioHang() {
+
+  let history = useHistory();
+
+
+
+  const onCheckOut = () => {
+    if(localStorage.getItem(`user`)){
+      history.push('/checkout');
+    } else { 
+      history.push(`/login`)
+    }
+  }
+
+
   const [cartItem, setCartItem] = useState(
     !JSON.parse(localStorage.getItem(`cartItem`))
       ? []
       : JSON.parse(localStorage.getItem(`cartItem`))
   );
+
+  const [fee, setFee] = useState(cartItem.length === 0 ? 0 : cartItem.map(() => 30).reduce(function myfunction(total,num){return total+num}))
+
   useEffect(() => {
     // eslint-disable-next-line no-unused-expressions
-    console.log(cartItem);
-  }, [cartItem]);
+    
+  }, [cartItem, setFee, fee]);
   const removeItem = (item) => {
     setCartItem(cartItem.filter((i) => i.maKhoaHoc !== item.maKhoaHoc));
     localStorage.setItem(
@@ -46,17 +64,17 @@ export default function GioHang() {
                 </div>
                 <div className="col-md-3">
                   <h5>Total</h5>
-                  <h1>$60.00</h1>
+    <h1>0.00 $</h1>
                   <span style={{ textDecoration: "line-through" }}>
                     $600.00
                   </span>
                   <br />
                   <span>Sale of 90%</span> <br />
                   <Button
-                    to="/checkout"
                     variant="outlined"
                     color="secondary"
                     className="w-100"
+                    onClick={onCheckOut}
                   >
                     Checkout
                   </Button>
@@ -168,15 +186,15 @@ export default function GioHang() {
               </div>
               <div className="col-md-3">
                 <h5>Total</h5>
-                <h1>$60.00</h1>
-                <span style={{ textDecoration: "line-through" }}>$600.00</span>
+                <h1>$ {fee}.00</h1>
+                <span style={{ textDecoration: "line-through" }}>${fee}0.00</span>
                 <br />
                 <span>Sale of 90%</span> <br />
                 <Button
-                  href="/checkout"
                   variant="outlined"
                   color="secondary"
                   className="w-100"
+                  onClick = {onCheckOut}
                 >
                   Checkout
                 </Button>

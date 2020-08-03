@@ -1,15 +1,70 @@
 import React, { Component } from "react";
 import * as action from "./../../redux/action/index";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import Banner from "../../components/Banner";
 import { Button } from "@material-ui/core";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+const MySwal = withReactContent(Swal);
 
 class ChiTietKhoaHoc extends Component {
   componentDidMount() {
     const id = this.props.match.params.id;
     this.props.getDetailCourse(id);
   }
+
+  functionAdd = (item) => async() => {
+    const cartArray = (await !JSON.parse(localStorage.getItem(`cartItem`)))
+      ? []
+      : JSON.parse(localStorage.getItem(`cartItem`));
+    var itemStorage =
+      (await cartArray.length) === 0
+        ? [{ ...item, sl: 1 }]
+        : { ...item, sl: 1 };
+    console.log(cartArray);
+
+    if (cartArray.length === 0) {
+      localStorage.setItem(`cartItem`, JSON.stringify(itemStorage));
+    } else {
+      let itemNew = false;
+      await cartArray.forEach(async (i) => {
+        if (i.maKhoaHoc === item.maKhoaHoc) {
+          i.sl += 1;
+          localStorage.setItem(`cartItem`, JSON.stringify(cartArray));
+          return (itemNew = false);
+        } else {
+          itemNew = true;
+        }
+      });
+      if (itemNew === true) {
+        await cartArray.push(itemStorage);
+        localStorage.setItem(`cartItem`, JSON.stringify(cartArray));
+      }
+    }
+  };
+
+  aleart2 = () => {
+    MySwal.fire({
+      title: "Are you sure?",
+      text: "",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, add to cart!",
+    }).then((res) => {
+      if(!res.dismiss) {
+        this.functionAdd(this.props.course);
+        return MySwal.fire(
+          "Add to cart!",
+          "Your course has been add to cart.",
+          "success"
+        );
+      }
+      
+    });
+  };
 
   render() {
     console.log(this.props.course);
@@ -124,6 +179,7 @@ class ChiTietKhoaHoc extends Component {
                     variant="contained"
                     color="secondary"
                     className="w-100"
+                    onClick={this.aleart2}
                   >
                     Add to cart
                   </Button>
@@ -131,9 +187,9 @@ class ChiTietKhoaHoc extends Component {
                     type="button"
                     className="btn btn-outline-success w-100 mt-2"
                   >
-                    <Link to="/shopping-cart" className="text-decoration-none">
+                    <NavLink to="/shopping-cart" className="text-decoration-none">
                       Buy now
-                    </Link>
+                    </NavLink>
                   </button>
                 </div>
                 <p>This course includes</p>

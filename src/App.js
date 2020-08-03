@@ -8,7 +8,7 @@ import AdminTemplate from "./templates/AdminTemplate";
 import Admin from "./pages/admin/Admin";
 import PageNotFound from "./pages/PageNotFound";
 
-const showMenusHome = routes => {
+const showMenusHome = (routes) => {
   if (routes && routes.length > 0) {
     return routes.map((item, index) => {
       return (
@@ -23,7 +23,7 @@ const showMenusHome = routes => {
   }
 };
 
-const showMenusAdmin = routes => {
+const showMenusAdmin = (routes) => {
   if (routes && routes.length > 0) {
     return routes.map((item, index) => {
       return (

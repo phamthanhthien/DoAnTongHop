@@ -6,7 +6,7 @@ import withReactContent from "sweetalert2-react-content";
 const MySwal = withReactContent(Swal);
 
 const KhoaHoc = ({ khoaHoc, actionFunction }) => {
-  const aleart2 = () => {
+  const aleart2 = (khoaHoc) => {
     MySwal.fire({
       title: "Are you sure?",
       text: "",
@@ -15,12 +15,16 @@ const KhoaHoc = ({ khoaHoc, actionFunction }) => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, add to cart!",
-    }).then(() => {
-      return MySwal.fire(
-        "Add to cart!",
-        "Your course has been add to cart.",
-        "success"
-      );
+    }).then((res) => {
+      if(!res.dismiss) {
+        actionFunction(khoaHoc);
+        return MySwal.fire(
+          "Add to cart!",
+          "Your course has been add to cart.",
+          "success"
+        );
+      }
+      
     });
   };
 
@@ -56,8 +60,7 @@ const KhoaHoc = ({ khoaHoc, actionFunction }) => {
             </NavLink>
             <button
               className="price-course btn"
-              onCSubmitk={aleart2}
-              onClick={() => actionFunction(khoaHoc)}
+              onClick={() => {aleart2(khoaHoc)}}
             >
               $300
             </button>

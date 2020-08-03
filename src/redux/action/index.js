@@ -7,6 +7,7 @@ export const actGetListCourseAPI = () => {
     callAPI("QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=GP08", "GET", null, null)
       .then((result) => {
         dispatch(actGetListCourse(result.data));
+        console.log(result.data);        
       })
       .catch((err) => {
         console.log(err.response.data);
